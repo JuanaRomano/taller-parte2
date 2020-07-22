@@ -1,16 +1,18 @@
 function validaPassword(){
-    var newPassword=document.getElementById('password').newPassword.value;
-    var minNumero= 10;
+    var newPassword=document.getElementById('password').value;
+    var minNumero= 0;
     var maxNumero= 20;
-    var regularExpresion= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-ZO-9!@#$%^&*]{10,20}$/;
+    var regularExpresion= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,20}$/;
     
-    alert(newPassword);
+    alert("quieres enviar sin caracteres especiales?");
 
     if (newPassword.length< minNumero || newPassword.length> maxNumero){
+        
         return false;
     }
     if (!regularExpresion.test(newPassword)){
-        alert ('el password debe tener minimo 10 caracteres y maximo 20');
+        alert ('el password debe tener minimo 10 caracteres entre letras, numeros y simbolos y maximo 20');
+        console.log("minimo 10 maximo 20")
         return false
     }
     
